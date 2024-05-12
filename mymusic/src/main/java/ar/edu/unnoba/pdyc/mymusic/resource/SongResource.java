@@ -3,53 +3,44 @@ package ar.edu.unnoba.pdyc.mymusic.resource;
 import ar.edu.unnoba.pdyc.mymusic.dto.SongDto;
 import ar.edu.unnoba.pdyc.mymusic.model.Song;
 import ar.edu.unnoba.pdyc.mymusic.service.SongService;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-@RestController
+@Component
 @Path("/songs")
 public class SongResource {
-    @Autowired
-    private  SongService songService;
 
+    @Autowired
+    private SongService songService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getPlaylists() {
+    public ResponseEntity<List<SongDto>> getAllSongs() {
         ModelMapper modelMapper = new ModelMapper();
-        List<SongDto> songDtos = songService.getAllSongs().stream().map(song -> {
-            SongDto songDto = modelMapper.map(song,SongDto.class);
-            songDto.setId(song.getId());
-            songDto.setName(song.getName());
-            songDto.setAuthor(song.getAuthor());
-            songDto.setGenre(song.getGenre());
-            return songDto;
-
-        }).toList();
-        return Response.ok(songDtos).build();
-
+        List<SongDto> songDtos = songService.getAllSongs().stream()
+                .map(song -> modelMapper.map(song, SongDto.class))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(songDtos);
     }
 
-    @PostMapping
-    @Path("/new")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createSong(@RequestBody SongDto songDto) {
+    public ResponseEntity<SongDto> createSong(SongDto songDto) {
         ModelMapper modelMapper = new ModelMapper();
         Song song = modelMapper.map(songDto, Song.class);
         song.setAuthor(songDto.getAuthor());
         song.setGenre(songDto.getGenre());
         song.setName(songDto.getName());
         songService.createSong(song);
-        return Response.ok(songDto).build();
+        return ResponseEntity.ok(songDto);
     }
-
 }

@@ -9,11 +9,16 @@ import java.util.List;
 
 public class Playlist {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name="owner_id", nullable = false)
+    private User owner;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "playlists_songs",
@@ -22,6 +27,23 @@ public class Playlist {
     )
 
     private List<Song> songs = new ArrayList<>();
+
+    public Playlist(String name, User owner) {
+        this.name = name;
+        this.owner = owner;
+        this.songs = new ArrayList<>();
+    }
+
+    public Playlist() {
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
 
     public Long getId() {
         return id;

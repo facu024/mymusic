@@ -6,7 +6,9 @@ import java.util.List;
 public interface PlaylistService {
     List<Playlist> getAllPlaylists();
     Playlist getPlaylistById(Long id);
-    Playlist createPlaylist(Playlist playlist);
+    void createPlaylist(String name, String mail);
     void deletePlaylist(Long id);
+    void updatePlaylistName(Long playlistId, String nameSong, String mail);
+
 
 }

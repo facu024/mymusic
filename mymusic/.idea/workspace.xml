@@ -4,15 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="990dd722-5e0b-447a-862d-24c82026f3f5" name="Changes" comment="Modelo de clases y JPA">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/resource/JerseyConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/resource/PlayListResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/resource/SongResource.java" afterDir="false" />
+    <list default="true" id="990dd722-5e0b-447a-862d-24c82026f3f5" name="Changes" comment="endpoints working">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/dto/AuthenticationRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/resource/UserResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/security/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/security/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/security/SecurityConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/service/UserServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/MymusicApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/MymusicApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/dto/PlayListDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/dto/PlayListDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/model/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/model/Playlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/resource/PlaylistResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/resource/PlaylistResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/service/PlayListServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/service/PlayListServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/service/PlaylistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic/service/PlaylistService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -63,8 +88,14 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ar.edu.unnoba.pdyc.mymusic.service" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/ar/edu/unnoba/pdyc/mymusic" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ar.edu.unnoba.pdyc.mymusic.dto" />
     </key>
   </component>
   <component name="RunManager">
@@ -93,7 +124,9 @@
       <option name="presentableId" value="Default" />
       <updated>1715393943138</updated>
       <workItem from="1715393945206" duration="2429000" />
-      <workItem from="1715448976150" duration="4675000" />
+      <workItem from="1715448976150" duration="13428000" />
+      <workItem from="1715541421308" duration="2403000" />
+      <workItem from="1717630446029" duration="13044000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -119,15 +152,53 @@
       <option name="project" value="LOCAL" />
       <updated>1715453763944</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Repository and service">
+      <option name="closed" value="true" />
+      <created>1715454052872</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715454052872</updated>
+    </task>
+    <task id="LOCAL-00005" summary="resources">
+      <option name="closed" value="true" />
+      <created>1715454354411</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715454354411</updated>
+    </task>
+    <task id="LOCAL-00006" summary="endpoints working">
+      <option name="closed" value="true" />
+      <created>1715542571130</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715542571130</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
     <MESSAGE value="Modelo de clases y JPA" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modelo de clases y JPA" />
+    <MESSAGE value="Repository and service" />
+    <MESSAGE value="resources" />
+    <MESSAGE value="endpoints working" />
+    <option name="LAST_COMMIT_MESSAGE" value="endpoints working" />
   </component>
 </project>
