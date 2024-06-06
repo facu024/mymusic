@@ -32,7 +32,7 @@ public class SecurityConfig {
                     .csrf(csrf -> csrf.disable())
                     .userDetailsService(userDetailsService)
                     .authorizeHttpRequests(auth -> auth
-                            .requestMatchers(HttpMethod.GET,"/playlists/**").permitAll()
+                            .requestMatchers(HttpMethod.GET,"/songs/**","/playlists/**").permitAll()
                             .anyRequest().fullyAuthenticated())
                     .addFilter(new JWTAuthenticationFilter
                             (authenticationConfiguration.getAuthenticationManager()))
